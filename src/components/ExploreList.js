@@ -7,7 +7,7 @@ import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
 import StarIcon from "@material-ui/icons/Star";
-import { Link } from "react-router-dom";
+import { Link } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -62,7 +62,8 @@ function ExploreList({ gitData, width }) {
                   className={classes.icon}
                 >
                   <Link
-                    to={tile.owner.html_url}
+                    href={tile.owner.html_url}
+                    target={"_blank"}
                     style={{ color: "#fff", alignItems: "center" }}
                   >
                     <InfoIcon />
